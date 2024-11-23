@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FrontEnd</title>
+  <title>Sistema de Gestão - E/D </title>
 
   <!-- Estilização -->
   <link rel="stylesheet" href="./src/assets/styles/main.css">
@@ -17,10 +17,13 @@
 </head>
 
 <body class="bg-color">
-
-  <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 box-effect">
   
+  <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <!-- Título Principal -->
+    <h3 class="text-center mb-4 text-uppercase title-highlight mt-4">Sistema de gestão E/D</h3>
+    
+    <!-- Caixa de Login e Registro -->
+    <div class="card p-4 box-effect m-3">
       <!-- Seção de Login -->
       <div id="login-section">
         <h3 class="text-center mb-4 color">Login</h3>
@@ -45,7 +48,6 @@
       <div id="register-section" class="d-none register-box container">
         <h3 class="text-center mb-4">Cadastro</h3>
         <form>
-          <!-- Campo Nome de Usuário com Tooltip -->
           <div class="mb-3">
             <label for="registerUsername" class="form-label">Nome de Usuário</label>
             <div class="d-flex align-items-center">
@@ -55,8 +57,6 @@
               </span>
             </div>
           </div>
-  
-          <!-- Linha para Nome da Conta e Identificador -->
           <div class="mb-3 row">
             <div class="col-md-6">
               <label for="registerAccountName" class="form-label">Nome da Conta</label>
@@ -67,14 +67,10 @@
               <input type="text" class="form-control" id="registerIdentifier" placeholder="Digite um identificador" required>
             </div>
           </div>
-  
-          <!-- Campo E-mail -->
           <div class="mb-3">
             <label for="registerEmail" class="form-label">Email</label>
             <input type="email" class="form-control" id="registerEmail" placeholder="Digite seu email" required>
           </div>
-  
-          <!-- Linha para Senha e Confirmar Senha -->
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="registerPassword" class="form-label">Senha</label>
@@ -85,22 +81,17 @@
               <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirme sua senha" required>
             </div>
           </div>
-  
-          <!-- Campo Número de Telefone -->
           <div class="mb-3">
             <label for="registerPhone" class="form-label">Número de Telefone</label>
             <input type="tel" class="form-control" id="registerPhone" placeholder="Digite seu número de telefone" required>
           </div>
-  
           <button type="submit" class="btn btn-success btn-hover w-100">Cadastrar</button>
         </form>
-  
         <p class="text-center mt-3">
           Já tem uma conta? 
           <a href="#" class="text-primary" id="goToLogin">Faça login</a>
         </p>
       </div>
-  
     </div>
   </div>
   
