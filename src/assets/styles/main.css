@@ -86,7 +86,7 @@
 #register-section {
   max-width: 800px; 
   width: 100%;     
-  max-height: 80vh; 
+  max-height: 70vh; 
   overflow-y: auto;
   overflow-y: scroll; 
   -ms-overflow-style: none;  
@@ -96,4 +96,24 @@
 .card {
   width: 100%;       
   max-width: 600px;  
+}
+
+/* Estilo personalizado para o título */
+.title-highlight {
+  color: white; /* Cor do texto branca */
+  filter: drop-shadow(0 0 0.75rem #33ff57); /* Sombra no texto para reforço */
+  position: relative; /* Permite adicionar a sombra abaixo */
+}
+
+/* Sombra abaixo do título */
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* Define a distância da sombra em relação ao texto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Largura da sombra */
+  height: 5px; /* Altura da sombra */
+  background-color: rgba(206, 202, 202, 0.4); /* Cor da sombra */
+  border-radius: 10px; /* Deixa a sombra com bordas suaves */
 }
