@@ -1,0 +1,119 @@
+.bg-color {
+  /* background: linear-gradient(180deg, #000000, #202020, #111412); 
+  background-size: 100% 200%;  */
+  animation: gradientAnimation 10s ease infinite; 
+  background-color:black;
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 50% 0%; 
+  }
+  50% {
+    background-position: 50% 100%; 
+  }
+  100% {
+    background-position: 50% 0%; 
+  }
+}
+
+
+.box-effect {
+  border-radius: 10px; 
+  background-color: #1c1c1c;
+  color: #fff; 
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.8), 
+    0 0 20px 5px #33ff57; 
+  animation: neonEffect 3s infinite alternate; 
+}
+
+
+@keyframes neonEffect {
+  0% {
+    box-shadow: 
+      0 4px 10px rgba(0, 0, 0, 0.8), 
+      0 0 20px 5px #33ff57;
+  }
+  25% {
+    box-shadow: 
+      0 4px 10px rgba(0, 0, 0, 0.8), 
+      0 0 20px 10px #00ff40;
+  }
+  50% {
+    box-shadow: 
+      0 4px 10px rgba(0, 0, 0, 0.8), 
+      0 0 20px 15px #00ff80;
+  }
+  75% {
+    box-shadow: 
+      0 4px 10px rgba(0, 0, 0, 0.8), 
+      0 0 20px 10px #00ff33;
+  }
+  100% {
+    box-shadow: 
+      0 4px 10px rgba(0, 0, 0, 0.8), 
+      0 0 20px 5px #33ff57;
+  }
+}
+
+
+.btn-hover{
+  background: linear-gradient(90deg, #4CAF50, #2E8B57);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-hover:hover{
+  background: linear-gradient(90deg, #2E8B57, #4CAF50);
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#register-section {
+  max-width: 800px; 
+  width: 100%;     
+  max-height: 70vh; 
+  overflow-y: auto;
+  overflow-y: scroll; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none;    
+}
+
+.card {
+  width: 100%;       
+  max-width: 600px;  
+}
+
+/* Estilo personalizado para o título */
+.title-highlight {
+  color: white; /* Cor do texto branca */
+  filter: drop-shadow(0 0 0.75rem #33ff57); /* Sombra no texto para reforço */
+  position: relative; /* Permite adicionar a sombra abaixo */
+}
+
+/* Sombra abaixo do título */
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* Define a distância da sombra em relação ao texto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Largura da sombra */
+  height: 5px; /* Altura da sombra */
+  background-color: rgba(206, 202, 202, 0.4); /* Cor da sombra */
+  border-radius: 10px; /* Deixa a sombra com bordas suaves */
+}
