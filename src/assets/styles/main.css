@@ -141,6 +141,33 @@ i {
 .text--color {
   color: var(--primary-color) !important;
 }
+
+select {
+  cursor: pointer;
+}
+
+.table--custom {
+  border: 1px solid var(--primary-border-color);
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+th {
+  background: var(--header-bg-color) !important;
+  color: var(--icon-color) !important;
+  text-transform: uppercase;
+}
+td, th {
+  padding: 12px 15px; /* Ajuste o preenchimento das células */
+  vertical-align: middle; /* Alinha o conteúdo verticalmente */
+}
+
+input[type="number"] {
+  width: 80px; /* Ajusta a largura dos inputs para se alinhar com a tabela */
+  text-align: center; /* Alinha o texto dentro do input */
+}
+/* 
 /* Rodapé */
 footer p {
   margin: 0;
