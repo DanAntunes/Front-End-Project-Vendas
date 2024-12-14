@@ -1,3 +1,4 @@
+/* Variaveis Color Dark */
 :root, :root[data-theme='dark'] {
   --primary-color: #F0F0F0;
 
@@ -14,12 +15,13 @@
   --link-color: #5bf577f1;
   --icon-color: #5bf577f1;
 }
+/* Variaveis Color Light */
 :root[data-theme='light'] {
   --primary-color: #0B0B0F;
 
   --header-bg-color: #F7F9F9; 
   --primary-bg-color: #E9F1E9; 
-  --secondary-bg-color: #DCE7DC; 
+  --secondary-bg-color: #c3d3c3; 
   --primary-text-color: #2E8B57;
   --secondary-text-color: #357D5E; 
   --shadow-color: #357D5E;
@@ -30,6 +32,7 @@
   --link-color: #228B22; 
   --icon-color: #357D5E; 
 }
+/* Mundaças especificas no modo Light */
 html[data-theme='light'] .navbar-toggler-icon:hover {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231C5833' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
@@ -39,7 +42,18 @@ html[data-theme='light'] .navbar-toggler-icon {
 html[data-theme='light'] input[type="checkbox"] {
   border: 1px solid var(--primary-border-color) !important;
 }
-
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-bg-color);
+  border-radius: 50rem;
+}
+/* Grobal */
 body {
   background: var(--primary-bg-color) !important;
   color: var(--text-color) !important;
@@ -51,6 +65,12 @@ h2 {
   font-weight: 600;
   text-transform: uppercase;
   color: var(--title-color) !important;
+}
+select {
+  cursor: pointer;
+}
+input[type="number"] {
+  border: 1px solid var(--primary-border-color);
 }
 /* Navbar */
 .bg--nav{
@@ -141,18 +161,13 @@ h2 {
 .text--color {
   color: var(--primary-color) !important;
 }
-
-select {
-  cursor: pointer;
-}
-
+/* Table */
 .table--custom {
   border: 1px solid var(--primary-border-color);
   border-radius: 10px !important;
   overflow: hidden;
   box-shadow: 0 4px 10px var(--shadow-color);
 }
-
 th {
   border-radius: 1px var(--header-bg-color) !important;
   background: var(--header-bg-color) !important;
@@ -166,36 +181,28 @@ th {
   border-radius: 8px 8px 0 0;
   overflow: hidden; 
 }
-
 th:first-child {
   border-top-left-radius: 8px !important; 
 }
-
 th:last-child {
   border-top-right-radius: 8px !important;
 }
-
 td, th {
   padding: 12px 15px; 
   vertical-align: middle; 
   text-align: center !important;
 }
-
 td input[type="number"] {
   width: 80px;
   text-align: center; 
 }
-
-input[type="number"] {
-  border: 1px solid var(--primary-border-color);
-}
+/* Section Desconto */
 .desconto {
   box-shadow: 0 4px 10px var(--shadow-color);
   border: 1px solid var(--primary-border-color);
   border-radius: 4px;
   background: var(--header-bg-color);
 }
-
 .input-group-custom { 
   display: flex;
   align-items: center;
@@ -205,19 +212,30 @@ input[type="number"] {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
 .label-custom {
   font-size: 1.25rem;
   text-align: center;
   display: flex;
 }
-
 .input-custom { 
   border-radius: 5px !important;
   text-align: center;
 }
-
-/* 
+/* Estilização para o input date */
+.data {
+  border: 1px solid var(--primary-border-color);
+  border-radius: 5px !important;
+  padding: 6px 10px; 
+  font-size: 1rem ;
+  transition: all 0.3s ease-in-out !important ; 
+  background-color: #f9f9f9 ;
+  color: var(--primary-text-color);
+}
+.data:focus {
+  border-color: #007bff ; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  outline: none;
+}
 /* Rodapé */
 footer p {
   margin: 0;
