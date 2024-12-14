@@ -1,6 +1,6 @@
 const toggleTheme = document.getElementById("toggleTheme");
 const rootHtml = document.documentElement;
-const closeButton = document.querySelector(".btn-close"); // Seleciona o botão de fechamento
+const closeButton = document.querySelector(".btn-close");
 
 const savedTheme = localStorage.getItem("theme") || "light";
 rootHtml.setAttribute("data-theme", savedTheme);
@@ -31,3 +31,16 @@ function changeTheme() {
 }
 
 toggleTheme.addEventListener("click", changeTheme);
+
+
+function resetSelects() {
+  const funcionarioSelect = document.getElementById('funcionario');
+  const gruposSelect = document.getElementById('grupos');
+  const categoriasSelect = document.getElementById('categorias');
+
+  funcionarioSelect.selectedIndex = 0;
+  gruposSelect.selectedIndex = 0;
+  categoriasSelect.selectedIndex = 0;
+
+  console.log('Seleções limpas!');
+}
