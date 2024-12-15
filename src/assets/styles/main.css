@@ -236,6 +236,24 @@ td input[type="number"] {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
   outline: none;
 }
+/* Efeito hover em botoes */
+.btn-hover{
+  background: linear-gradient(90deg, #4CAF50, #2E8B57);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-hover:hover{
+  background: linear-gradient(90deg, #2E8B57, #4CAF50);
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 /* Rodapé */
 footer p {
   margin: 0;
