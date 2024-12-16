@@ -37,8 +37,10 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Link do header ajustado para redirecionar à seção "home" -->
-        <a class="navbar-brand text--color text-center" href="#" id="homeLink">Sistema de Gestão ED</a>
+       <span>
+         <!-- Link do header ajustado para redirecionar à seção "home" -->
+         <a class="navbar-brand text--color text-center" href="#" id="homeLink">Sistema de Gestão ED</a>
+       </span>
       
         <div class="header__toggle">
           <i id="toggleTheme" class="bi bi-sun" aria-label="Alternar tema"></i>
@@ -62,8 +64,8 @@
             <ul class="navbar-nav">
               <li class="nav-item"><a class="nav-link" href="#vendas" data-target="vendas">Vendas</a></li>
               <li class="nav-item"><a class="nav-link" href="#compras" data-target="compras">Compras</a></li>
-              <li class="nav-item"><a class="nav-link" href="#movimentacoesEstoque" data-target="funcionarios">Movimentações de Estoque</a></li>
-              <li class="nav-item"><a class="nav-link" href="#produtos" data-target="produtos">Produtos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#movimentacoes" data-target="movimentacoes">Movimentações</a></li>
+              <li class="nav-item"><a class="nav-link" href="#estoque" data-target="estoque">Estoque</a></li>
               <li class="nav-item"><a class="nav-link" href="#comissoes" data-target="comissoes">Comissões</a></li>
               <li class="nav-item"><a class="nav-link" href="#estatisticas" data-target="estatisticas">Estatísticas</a></li>
             </ul>
@@ -75,12 +77,12 @@
 
   <!-- Conteúdo Principal -->
   <main class="container mt-5 pt-5">
+
     <!-- Seção Home -->
     <section id="home" class="content-section active" aria-label="Home">
       <h2>Bem-vindo!</h2>
       <p>Este é o sistema de gestão. Explore as opções no menu.</p>
     </section>
-
     <!-- Vendas  -->
     <section id="vendas" class="content-section" aria-label="Vendas">
       <div class="container-fluid">
@@ -226,7 +228,6 @@
        
       </div>
     </section>
-
     <!-- Compras  -->
     <section id="compras" class="content-section" aria-label="Compras">
       <div class="container-fluid">
@@ -362,19 +363,85 @@
               </div>
           </div>
          </div>
-        
-
       </div>
     </section>
-    
-    <section id="movimentacoesEstoque" class="content-section" aria-label="Movimentações de Estoque">
-      <h2>Movimentaçoes de Estoque</h2>
-      <p>Conteúdo relacionado a funcionários.</p>
+    <!-- Movimentações-->
+    <section id="movimentacoes" class="content-section" aria-label="Movimentações">
+      <h2>Movimentações</h2>
+      <!-- Linha para os selects -->
+      <div class="row g-3 align-items-center mt-3">
+        <div class="col-md-6">
+          <label for="funcionarioSelect" class="form-label">Funcionário</label>
+          <select id="funcionarioSelect" class="form-select">
+            <option selected>Selecione um funcionário</option>
+            <option value="1">Funcionário 1</option>
+            <option value="2">Funcionário 2</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="movimentacaoSelect" class="form-label">Tipo de Movimentação</label>
+          <select id="movimentacaoSelect" class="form-select">
+            <option selected>Selecione o tipo</option>
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+          </select>
+        </div>
+      </div>
+      <!-- Linha para as tabelas -->
+      <div class="row mt-4">
+        <!-- Tabela com 4 colunas -->
+        <div class="col-md-12">
+          <table class="table table-bordered table--custom align-center table-striped table-hover w-100 rounded">
+            <thead>
+              <tr>
+                <th scope="col">Produto</th>
+                <th scope="col">Qtd Entrada</th>
+                <th scope="col">Qtd Saída</th>
+                <th scope="col">Motivo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <select class="form-select">
+                    <option selected>Selecione um produto</option>
+                    <option value="produto1">Produto 1</option>
+                    <option value="produto2">Produto 2</option>
+                  </select>
+                </td>
+                <td><input type="number" class="form-control mx-auto"></td>
+                <td><input type="number" class="form-control mx-auto"></td>
+                <td><textarea class="form-control" rows="1" placeholder="Informe o motivo"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
-    <section id="produtos" class="content-section" aria-label="Produtos">
-      <h2>Produtos</h2>
-      <p>Conteúdo relacionado a produtos.</p>
+    <!-- Estoque -->
+    <section id="estoque" class="content-section" aria-label="Estoque">
+      <h2>Estoque</h2>
+       <!-- Tabela com 2 colunas -->
+        <div class="row mt-3">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Produto</th>
+                  <th scope="col">Quantidade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
     </section>
+
     <section id="comissoes" class="content-section" aria-label="Comissões">
       <h2>Comissões</h2>
       <p>Conteúdo relacionado a comissões.</p>
