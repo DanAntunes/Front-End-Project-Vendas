@@ -14,6 +14,7 @@
   --text-color: #2E8B57;
   --link-color: #5bf577f1;
   --icon-color: #5bf577f1;
+  --alert-color: #EC1B23 ;
 }
 /* Variaveis Color Light */
 :root[data-theme='light'] {
@@ -31,6 +32,7 @@
   --text-color: #2E8B57; 
   --link-color: #228B22; 
   --icon-color: #357D5E; 
+  --alert-color: #EC1B23 ;
 }
 /* Mundaças especificas no modo Light */
 html[data-theme='light'] .navbar-toggler-icon:hover {
@@ -257,6 +259,20 @@ tbody,th {
   transform: scale(1.01);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+/* Modal */
+.modal-header {
+  --bs-modal-header-color:var(--alert-color) ;
+  --bs-modal-header-border-color: var(--primary-bg-color) ;
+  --bs-modal-header-border-width: 0px;
+}
+.modal-content{
+  --bs-modal-color: var(--primary-bg-color);
+  --bs-modal-border-color: var(--alert-color);
+}
+.modal-footer{
+  --bs-modal-footer-border-width: 0px;
+}
+
 /* Rodapé */
 footer p {
   margin: 0;
