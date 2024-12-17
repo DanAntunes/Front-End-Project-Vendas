@@ -66,8 +66,8 @@
               <li class="nav-item"><a class="nav-link" href="#compras" data-target="compras">Compras</a></li>
               <li class="nav-item"><a class="nav-link" href="#movimentacoes" data-target="movimentacoes">Movimentações</a></li>
               <li class="nav-item"><a class="nav-link" href="#estoque" data-target="estoque">Estoque</a></li>
-              <li class="nav-item"><a class="nav-link" href="#comissoes" data-target="comissoes">Comissões</a></li>
-              <li class="nav-item"><a class="nav-link" href="#estatisticas" data-target="estatisticas">Estatísticas</a></li>
+              <li class="nav-item"><a class="nav-link" href="#gestaoPedidos" data-target="gestaoPedidos">Gestão de Pedidos</a></li>
+        
             </ul>
           </div>
         </div>
@@ -76,17 +76,17 @@
   </header>
 
   <!-- Conteúdo Principal -->
-  <main class="container mt-5 pt-5">
+  <main class=" mt-5 pt-5">
 
     <!-- Seção Home -->
-    <section id="home" class="content-section active" aria-label="Home">
+    <section id="home" class="content-section active container" aria-label="Home">
       <h2>Bem-vindo!</h2>
       <p>Este é o sistema de gestão. Explore as opções no menu.</p>
     </section>
     
     <!-- Vendas  -->
     <section id="vendas" class="content-section" aria-label="Vendas">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row justify-content-between mb-2 select-box">
           <h2>Vendas</h2>
           <div class="col-md-6">
@@ -231,7 +231,7 @@
     </section>
     <!-- Compras  -->
     <section id="compras" class="content-section" aria-label="Compras">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row justify-content-between mb-2 select-box">
           <h2>Compras</h2>
           <div class="col-md-6">
@@ -368,62 +368,66 @@
     </section>
     <!-- Movimentações-->
     <section id="movimentacoes" class="content-section" aria-label="Movimentações">
-      <h2>Movimentações</h2>
-      <!-- Linha para os selects -->
-      <div class="row g-3 align-items-center mt-3">
-        <div class="col-md-6">
-          <label for="funcionarioSelect" class="form-label">Funcionário</label>
-          <select id="funcionarioSelect" class="form-select">
-            <option selected>Selecione um funcionário</option>
-            <option value="1">Funcionário 1</option>
-            <option value="2">Funcionário 2</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label for="movimentacaoSelect" class="form-label">Tipo de Movimentação</label>
-          <select id="movimentacaoSelect" class="form-select">
-            <option selected>Selecione o tipo</option>
-            <option value="entrada">Entrada</option>
-            <option value="saida">Saída</option>
-          </select>
-        </div>
-      </div>
-      <!-- Linha para as tabelas -->
-      <div class="row mt-4">
-        <!-- Tabela com 4 colunas -->
-        <div class="col-md-12">
-          <table class="table table-bordered table--custom align-center table-striped table-hover w-100 rounded">
-            <thead>
-              <tr>
-                <th scope="col">Produto</th>
-                <th scope="col">Qtd Entrada</th>
-                <th scope="col">Qtd Saída</th>
-                <th scope="col">Motivo</th>
-              </tr>
-            </thead>
-            <tbody id="table-body">
-              <tr>
-                <td>
-                  <select class="form-select">
-                    <option value="" disabled selected hidden>Selecione um produto</option>
-                  </select>
-                </td>
-                <td><input type="number" class="form-control mx-auto"></td>
-                <td><input type="number" class="form-control mx-auto"></td>
-                <td><textarea class="form-control" rows="1" placeholder="Informe o motivo"></textarea></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="d-flex justify-content-between gap-2">
-            <button id="add-row" class="btn btn-primary flex-grow-1">Adicionar Linha</button>
-            <button id="remove-row" class="btn btn-danger flex-grow-1">Remover Linha</button>
+      <div class="container">
+        <h2>Movimentações</h2>
+        <!-- selects -->
+        <div class="row g-3 align-items-center mt-3">
+          <div class="col-md-6">
+            <label for="funcionarioSelect" class="form-label">Funcionário</label>
+            <select id="funcionarioSelect" class="form-select">
+              <option selected>Selecione um funcionário</option>
+              <option value="1">Funcionário 1</option>
+              <option value="2">Funcionário 2</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="movimentacaoSelect" class="form-label">Tipo de Movimentação</label>
+            <select id="movimentacaoSelect" class="form-select">
+              <option selected>Selecione o tipo</option>
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </select>
           </div>
         </div>
+        <!--  tabelas -->
+        <div class="row mt-4">
+          <!-- Tabela com 4 colunas -->
+          <div class="col-md-12">
+            <table class="table table-bordered table--custom align-center table-striped table-hover w-100 rounded">
+              <thead>
+                <tr>
+                  <th scope="col">Produto</th>
+                  <th scope="col">Qtd Entrada</th>
+                  <th scope="col">Qtd Saída</th>
+                  <th scope="col">Motivo</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <tr>
+                  <td>
+                    <select class="form-select">
+                      <option value="" disabled selected hidden>Selecione um produto</option>
+                    </select>
+                  </td>
+                  <td><input type="number" class="form-control mx-auto"></td>
+                  <td><input type="number" class="form-control mx-auto"></td>
+                  <td><textarea class="form-control" rows="1" placeholder="Informe o motivo"></textarea></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-between gap-2">
+              <button id="add-row" class="btn btn-primary flex-grow-1">Adicionar Linha</button>
+              <button id="remove-row" class="btn btn-danger flex-grow-1">Remover Linha</button>
+            </div>
+          </div>
+        </div>
+        <!-- Botão Registrar -->
+        <div class="text-center mt-3">
+          <button class="btn btn-lg btn-success btn-hover w-100 text-uppercase" type="button">Registrar</button>
+        </div>
       </div>
-      <div class="text-center mt-3">
-        <button class="btn btn-lg btn-success btn-hover w-100 text-uppercase" type="button">Registrar</button>
-      </div>
-      <div class="container my-4">
+      <!-- Últimas Movimentações -->
+      <div class="container-fluid my-4">
         <h2 class="text-center">Últimas Movimentações</h2>
         <div class="table-responsive">
           <table class="table table-striped table-hover align-middle">
@@ -446,38 +450,65 @@
         </div>
       </div>
     </section>
-
     <!-- Estoque -->
     <section id="estoque" class="content-section" aria-label="Estoque">
+     <div class="container">
       <h2>Estoque</h2>
-       <!-- Tabela com 2 colunas -->
-        <div class="row mt-3">
-          <div class="col-12">
-            <table class="table table-bordered table--custom align-center table-striped table-hover w-100 rounded">
-              <thead>
-                <tr>
-                  <th scope="col">Produto</th>
-                  <th scope="col">Quantidade</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+      <!-- Tabela com 2 colunas -->
+       <div class="row mt-3">
+         <div class="col-12">
+           <table class="table table-bordered table--custom align-center table-striped table-hover w-100 rounded">
+             <thead>
+               <tr>
+                 <th scope="col">Produto</th>
+                 <th scope="col">Quantidade</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td></td>
+                 <td></td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+    </section>
+    
+    <!-- Gestão de pedidos -->
+    <section id="gestaoPedidos" class="content-section" aria-label="Gestão de Pedidos">
+      <div class="container">
+        <h2>Gestão de Pedidos</h2>
+        <!-- combobox -->
+        <div class="row d-flex flex-row text-uppercase">
+          <div class="col-md-4">
+            <label class="form-label label-custom">Funcionários:</label>
+            <select class="form-select" id="funcionarios" name="funcionarios" required aria-label="Selecione o funcionario">
+              <option value="" disabled selected hidden>Selecione o funcionário</option>
+            </select>
+            
+          </div>
+          <div class="col-md-4">
+            <label class="form-label label-custom">Grupos:</label>
+            <select class="form-select" id="grupos" name="grupos" required aria-label="Selecione o grupo">
+              <option value="" disabled selected hidden>Selecione o Grupo</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label class="form-label label-custom">Periodo:</label>
+            <input type="date" class="data" name="" id="">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label label-custom">Até:</label>
+            <input type="date" class="data" name="" id="">
           </div>
         </div>
-    </section>
+      </div>
 
-    <section id="comissoes" class="content-section" aria-label="Comissões">
-      <h2>Comissões</h2>
-      <p>Conteúdo relacionado a comissões.</p>
-    </section>
-    <section id="estatisticas" class="content-section" aria-label="Estatísticas">
-      <h2>Estatísticas</h2>
-      <p>Conteúdo relacionado a estatísticas.</p>
+      <div class="debug container-fluid w-100">
+
+      </div>
     </section>
   </main>
 
