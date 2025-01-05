@@ -15,6 +15,7 @@
   --link-color: #5bf577f1;
   --icon-color: #5bf577f1;
   --alert-color: #EC1B23 ;
+  --warning-color: #ffc107 ;
 }
 /* Variaveis Color Light */
 :root[data-theme='light'] {
@@ -33,9 +34,7 @@
   --link-color: #228B22; 
   --icon-color: #357D5E; 
   --alert-color: #EC1B23 ;
-}
-.debug{
-  border: 1px solid red;
+  --warning-color: #ffc107;
 }
 /* Mundaças especificas no modo Light */
 html[data-theme='light'] .navbar-toggler-icon:hover {
@@ -68,7 +67,6 @@ i {
 }
 h2 {
   font-weight: 600;
-  text-transform: uppercase;
   color: var(--title-color) !important;
 }
 select {
@@ -262,20 +260,38 @@ tbody,th {
   transform: scale(1.01);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-/* Modal */
-.modal-header {
+/* Modals */
+#staticBackdrop .modal-header {
   --bs-modal-header-color:var(--alert-color) ;
   --bs-modal-header-border-color: var(--primary-bg-color) ;
   --bs-modal-header-border-width: 0px;
 }
-.modal-content{
+#staticBackdrop .modal-content{
   --bs-modal-color: var(--primary-bg-color);
   --bs-modal-border-color: var(--alert-color);
 }
 .modal-footer{
   --bs-modal-footer-border-width: 0px;
 }
-
+#warningModal .modal-header {
+  --bs-modal-header-color:var(--warning-color) ;
+  --bs-modal-header-border-color: var(--primary-bg-color) ;
+  --bs-modal-header-border-width: 0px;
+}
+#warningModal .modal-content{
+  --bs-modal-color: var(--primary-bg-color);
+  --bs-modal-border-color: var(--warning-color);
+}
+#success .modal-header {
+  --bs-modal-header-color:var(--secondary-text-color) ;
+  --bs-modal-header-border-color: var(--primary-border-color) ;
+  --bs-modal-header-border-width: 0px;
+}
+#success .modal-content{
+  --bs-modal-color: var(--link-color);
+  --bs-modal-border-color: var(--primary-border-color);
+  --bs-modal-bg: var(--primary-text-color);
+}
 /* Rodapé */
 footer p {
   margin: 0;
