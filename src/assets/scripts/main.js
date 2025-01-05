@@ -94,7 +94,7 @@ $('#remove-row').on('click', function () {
     $('#table-body tr:last').remove();
   } else {
     // Exibe o modal quando não é possível remover a última linha
-    $('#staticBackdrop').modal('show');
+    $('#success').modal('show');
   }
 });
 
