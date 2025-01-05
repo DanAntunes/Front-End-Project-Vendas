@@ -66,7 +66,7 @@
               <li class="nav-item"><a class="nav-link" href="#compras" data-target="compras">Compras</a></li>
               <li class="nav-item"><a class="nav-link" href="#movimentacoes" data-target="movimentacoes">Movimentações</a></li>
               <li class="nav-item"><a class="nav-link" href="#estoque" data-target="estoque">Estoque</a></li>
-              <li class="nav-item"><a class="nav-link" href="#gestaoPedidos" data-target="gestaoPedidos">Gestão de Pedidos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#gestaoPedidos" data-target="gestaoDePedidos">Gestão de Pedidos</a></li>
         
             </ul>
           </div>
@@ -123,7 +123,7 @@
         </div>
         <!-- Botão -->
         <div class="text-center">
-          <button class="btn btn-lg btn-danger w-100 text-uppercase" type="button" onclick="resetSelects()">Limpar Seleções</button>
+          <button class="btn btn-lg btn-danger w-100" type="button" onclick="resetSelects()">Limpar Seleções</button>
         </div>
         <!-- Tabela -->
         <div class="container-fluid mt-4 mb-4 p-0 m-0 table--custom">
@@ -183,7 +183,7 @@
           </div>
         </div>
         <!-- Desconto -->
-          <div class="desconto text-uppercase mt-2 mb-3 p-2 m-1 gap-3 ">
+          <div class="desconto mt-2 mb-3 p-2 m-1 gap-3 ">
             <div class="input-group input-group-custom d-flex flex-row mt-3 justify-content-start">
               <label for="descontoTotal" class="form-label label-custom d-flex">
               Desconto Total :
@@ -223,7 +223,7 @@
             </div>
             <!-- Botão Confirmar -->
           <div class="text-center">
-            <button class="btn btn-lg btn-success btn-hover w-100 text-uppercase" type="button">Registrar Venda</button>
+            <button class="btn btn-lg btn-success btn-hover w-100" type="button">Registrar Venda</button>
           </div>
           </div>
        
@@ -268,7 +268,7 @@
         </div>
         <!-- Botão -->
         <div class="text-center">
-          <button class="btn btn-lg btn-danger w-100 text-uppercase" type="button" onclick="resetSelects()">Limpar Seleções</button>
+          <button class="btn btn-lg btn-danger w-100" type="button" onclick="resetSelects()">Limpar Seleções</button>
         </div>
         <!-- Tabela -->
         <div class="container-fluid mt-4 mb-4 p-0 m-0 table--custom">
@@ -328,7 +328,7 @@
           </div>
         </div>
         <!-- Desconto -->
-         <div class="desconto text-uppercase mt-2 mb-3 p-2 m-1 gap-3 ">
+         <div class="desconto mt-2 mb-3 p-2 m-1 gap-3 ">
           <div class="input-group input-group-custom d-flex flex-row mt-3 justify-content-start">
             <label for="descontoTotal" class="form-label label-custom d-flex">
              Desconto Total :
@@ -347,20 +347,42 @@
             </div>
           </div>
           <div class="mt-3 mb-3 p-0 m-0 gap-1">
-              <div class="input-group input-group-custom d-flex flex-column  mt-3 justify-content-start">
+            <div class="input-group input-group-custom d-flex flex-column mt-3 justify-content-start">
+              <!-- Valor Total -->
+              <div class="d-flex flex-row align-items-center gap-2">
                 <label for="valorTotal" class="form-label label-custom">
-                 Valor Total :
+                  Valor Total:
                 </label>
-                <label for="descontoTotal" class="form-label label-custom">
-                  Desconto Total :
-                </label>
-                <label for="descontoTotal" class="form-label label-custom">
-                  Valor Final :
+                <label id="labelValorTotalDinamica" class="form-label label-custom text-light">
                 </label>
               </div>
+          
+              <!-- Desconto Total -->
+              <div class="d-flex flex-row align-items-center gap-2">
+                <label for="descontoTotal" class="form-label label-custom ">
+                  Desconto Total:
+                </label>
+                <label id="labelDescontoTotalDinamica" class="form-label label-custom text-light">
+                  2
+                </label>
+              </div>
+          
+              <!-- Valor Final -->
+              <div class="d-flex flex-row align-items-center gap-2">
+                <label for="valorFinal" class="form-label label-custom">
+                  Valor Final:
+                </label>
+                <label id="labelValorFinalDinamica" class="form-label label-custom text-light">
+                 3
+                </label>
+              </div>
+
+            </div>
+          </div>
+          
               <!-- Botão -->
               <div class="text-center">
-                <button class="btn btn-lg btn-success w-100 text-uppercase btn-hover" type="button"">Registrar Compra</button>
+                <button class="btn btn-lg btn-success w-100 btn-hover" type="button"">Registrar Compra</button>
               </div>
           </div>
          </div>
@@ -423,7 +445,7 @@
         </div>
         <!-- Botão Registrar -->
         <div class="text-center mt-3">
-          <button class="btn btn-lg btn-success btn-hover w-100 text-uppercase" type="button">Registrar</button>
+          <button class="btn btn-lg btn-success btn-hover w-100" type="button">Registrar</button>
         </div>
       </div>
       <!-- Últimas Movimentações -->
@@ -475,13 +497,13 @@
        </div>
      </div>
     </section>
-    
+
     <!-- Gestão de pedidos -->
-    <section id="gestaoPedidos" class="content-section" aria-label="Gestão de Pedidos">
+    <section id="gestaoDePedidos" class="content-section" aria-label="Gestão de Pedidos">
       <div class="container">
         <h2>Gestão de Pedidos</h2>
         <!-- combobox -->
-        <div class="row d-flex flex-row text-uppercase">
+        <div class="row d-flex flex-row">
           <div class="col-md-4">
             <label class="form-label label-custom">Funcionários:</label>
             <select class="form-select" id="funcionarios" name="funcionarios" required aria-label="Selecione o funcionario">
@@ -504,10 +526,124 @@
             <input type="date" class="data" name="" id="">
           </div>
         </div>
+        <!-- Tabela de 3 colunas -->
+        <div class="row mt-3">
+          <div class="col-12">
+            <table class="table table-bordered table--custom align-center table-striped table-hover w-100 rounded">
+              <thead>
+                <tr>
+                  <th scope="col">Material</th>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">Estoque</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-
-      <div class="debug container-fluid w-100">
-
+      <div class="container-fluid w-100 mt-3">
+        <div class="table-responsive">
+          <table id="gestaoPedidos" class="table table-bordered table--custom align-center table-striped table-hover w-100 rounded">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Data Pedido</th>
+                <th scope="col">Grupo</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Pedido</th>
+                <th scope="col">Fabricado</th>
+                <th scope="col">Entregue</th>
+                <th scope="col">Previsão Entrega</th>
+                <th scope="col">Data Pagamento</th>
+                <th scope="col">Entregar</th>
+                <th scope="col">Qtd</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <input type="checkbox" class="form-check-input">
+                  </td>
+                  <td>
+                    <input type="number" class="form-control mx-auto" value="">
+                  </td>
+                </tr>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <!-- Checkbox e botão do primeiro toast -->
+          <div class="col-md-6 d-flex align-items-center">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="movimentarEstoque">
+              <label class="form-check-label" for="movimentarEstoque">Movimentar Estoque</label>
+            </div>
+            <button id="btnMovimentarEstoque" type="button" class="btn btn-link p-0 ms-2">
+              <i class="bi bi-question-circle"></i>
+            </button>
+          </div>
+      
+          <!-- Checkbox e botão do segundo toast -->
+          <div class="col-md-6 d-flex align-items-center">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="considerarCraftMateriais">
+              <label class="form-check-label" for="considerarCraftMateriais">
+                Considerar Craft Materiais Listagem
+              </label>
+            </div>
+            <button id="btnConsiderarCraftMateriais" type="button" class="btn btn-link p-0 ms-2">
+              <i class="bi bi-question-circle"></i>
+            </button>
+          </div>
+          <div class="text-center mt-3">
+            <button class="btn btn-lg btn-success btn-hover w-100 " type="button">Atualizar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Toasts -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <!-- Primeiro toast -->
+        <div id="toastMovimentarEstoque" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Informação</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Quando selecionado irá fazer movimentações no estoque. Caso seja um produto que já tem pronto, esta opção deve
+            ficar desmarcada.
+          </div>
+        </div>
+      <!-- Segundo toast -->
+        <div id="toastConsiderarCraftMateriais" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Informação</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Quando esta opção estiver ativa, irá considerar os crafts secundários na listagem (material reciclado →
+            borracha).
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -545,7 +681,23 @@
       </div>
     </div>
   </div>
-  
+ <!-- Modals Venda Confirmada -->
+ <div class="modal fade" id="success" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h1 class="modal-title fs-5 text-light text-uppercase" id="staticBackdropLabel">Venda Concluída com Sucesso!</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-light fs-5">
+        <a id="#vendaBemSucedida"></a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- Rodapé -->
   <footer class="text-center mt-2 py-1">
     <p>&copy; Todos os direitos reservados.</p>
@@ -571,6 +723,18 @@
           section.classList.remove('active');
         });
         document.getElementById('home').classList.add('active');
+      });
+     
+      // Exibir o toast Movimentar Estoque
+      document.getElementById('btnMovimentarEstoque').addEventListener('click', function () {
+        var toast = new bootstrap.Toast(document.getElementById('toastMovimentarEstoque'));
+        toast.show();
+      });
+
+      // Exibir o toast Considerar Craft Materiais
+      document.getElementById('btnConsiderarCraftMateriais').addEventListener('click', function () {
+        var toast = new bootstrap.Toast(document.getElementById('toastConsiderarCraftMateriais'));
+        toast.show();
       });
     </script>
   
