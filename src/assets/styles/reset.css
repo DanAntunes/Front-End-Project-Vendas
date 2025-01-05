@@ -4,6 +4,6 @@
   box-sizing: border-box;
   vertical-align: baseline;
   list-style-type: none;
-  font-family: "JetBrains Mono", serif;
+  font-family: "JetBrains Mono", sans-serif;
   font-optical-sizing: auto;
 }
